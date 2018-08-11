@@ -1,0 +1,14 @@
+<input
+  type="text"
+  class="form-control"
+  (input)="oppenBtn()"
+  [(ngModel)]="yourName">
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewName"
+  (click)="onCreatName()">Add now</button>
+  <button
+  class="btn btn-primary"
+  [disabled]="!allowHaveName"
+  (click)="dellName()">Dell</button>
+<p [innerHTML]="addName"></p>

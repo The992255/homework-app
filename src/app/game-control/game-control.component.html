@@ -1,0 +1,6 @@
+<button
+  class="btn btn-primary"
+  (click)="play()">
+  <div *ngIf="playOrNot; else notPlay">丸！</div>
+  <ng-template #notPlay>噗響丸惹</ng-template>
+</button>

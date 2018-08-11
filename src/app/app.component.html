@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+        <div class="col-xs-12">
+            <h3>Your name!</h3>
+            <div class="app-server"></div>
+            <hr>
+            <h3>Say?</h3>
+            <div class="sayMain">
+                <button
+                class="btn btn-primary"
+                (click)="lookSay()">What I say?</button>
+                <p *ngIf="look">貴安</p>
+            </div>
+            <div *ngFor="let allSay of say;let i =index"
+                [ngStyle]="{backgroundColor: i > 5 ? 'red' : 'transprant'}"
+                [ngClass]="{'sayAgain': i > 5}"
+            >{{ allSay }}</div>
+            <hr>
+            <h3>Game</h3>
+            <div class="col-xs-12">
+                <app-game-control (putScore)="addScore($event)"></app-game-control>
+            </div>
+            <div class="col-md-5">
+                機素丸！
+                <app-odd 
+                *ngFor="let myOddScore of myOddScores"
+                [odd]="myOddScore.score"></app-odd>
+            </div>
+            <div class="col-md-5">
+                偶素丸！
+                <app-even 
+                *ngFor="let myEvenScore of myEvenScores"
+                [even]="myEvenScore.score"
+                ></app-even>
+            </div>
+        </div>
+  </div>
+</div>
